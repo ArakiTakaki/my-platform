@@ -1,0 +1,40 @@
+{
+  "name": "my-platform",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "license": "MIT",
+  "scripts": {
+    "predev": "rimraf dist",
+    "dev": "run-p dev:*",
+    "dev:tsc": "tsc -w -p tsconfig.main.json",
+    "dev:webpack": "cross-env NODE_ENV=\"development\" webpack",
+    "dev:electron": "wait-on ./dist/index.html && cross-env NODE_ENV=\"development\" electron .",
+    "build": "cross-env NODE_ENV=\"production\" webpack --progress"
+  },
+  "devDependencies": {
+    "@types/html-webpack-plugin": "^3.2.6",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "cross-env": "^7.0.3",
+    "electron": "^17.0.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-search-devtools": "^1.5.3",
+    "html-webpack-plugin": "^5.5.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^9.2.6",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.5",
+    "wait-on": "^6.0.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "volta": {
+    "node": "14.19.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-query": "^3.34.15"
+  }
+}
